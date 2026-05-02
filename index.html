@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="grain"></div>
+    <main>
+        <nav>
+            <div class="logo">
+                <span class="logo-icon">▦</span>
+                <span class="logo-text">Kanban</span>
+            </div>
+            <button id="toggle-modal" class="add-btn">
+                <span class="btn-icon">+</span>
+                <span>New Task</span>
+            </button>
+        </nav>
+
+        <section class="board">
+            <div id="todo" class="task-column">
+                <div class="heading">
+                    <div class="col-label">
+                        <span class="col-dot dot-todo"></span>
+                        To Do
+                    </div>
+                    <div class="count-badge">0</div>
+                </div>
+                <div class="tasks-wrapper"></div>
+            </div>
+
+            <div id="progress" class="task-column">
+                <div class="heading">
+                    <div class="col-label">
+                        <span class="col-dot dot-progress"></span>
+                        In Progress
+                    </div>
+                    <div class="count-badge">0</div>
+                </div>
+                <div class="tasks-wrapper"></div>
+            </div>
+
+            <div id="done" class="task-column">
+                <div class="heading">
+                    <div class="col-label">
+                        <span class="col-dot dot-done"></span>
+                        Done
+                    </div>
+                    <div class="count-badge">0</div>
+                </div>
+                <div class="tasks-wrapper"></div>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal" id="modal">
+        <div class="bg"></div>
+        <div class="center">
+            <div class="modal-header">
+                <h2>New Task</h2>
+                <button class="close-btn" id="close-modal">✕</button>
+            </div>
+            <div class="field">
+                <label for="task-title-input">Title</label>
+                <input type="text" id="task-title-input" placeholder="What needs to be done?" />
+            </div>
+            <div class="field">
+                <label for="task-desc-input">Description</label>
+                <textarea id="task-desc-input" placeholder="Add some details..." rows="3"></textarea>
+            </div>
+            <div class="field">
+                <label for="task-priority">Priority</label>
+                <select id="task-priority">
+                    <option value="low">🟢 Low</option>
+                    <option value="medium" selected>🟡 Medium</option>
+                    <option value="high">🔴 High</option>
+                </select>
+            </div>
+            <button id="add-new-task" class="submit-btn">Add Task</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
